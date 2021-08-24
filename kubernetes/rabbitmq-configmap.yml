@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: broker-conf
+data:
+  host: rabbitmq
+  port: "15672"

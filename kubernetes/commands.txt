@@ -1,0 +1,27 @@
+minikube docker-env | Invoke-Expression
+docker build -t lmsamarawickrama/smartbids-backend .
+
+kubectl apply -f .\mysql-configmap.yml
+kubectl apply -f .\rabbitmq-configmap.yml
+kubectl apply -f .\mysqldb-credentials.yml
+kubectl apply -f .\rabbitmq-credentials.yml
+
+kubectl apply -f .\db-deployment.yml
+kubectl apply -f .\broker-deployment.yml
+kubectl apply -f .\app-deployment.yml
+
+truble shoot
+kubectl get pods
+kubectl describe pod smartbids-backend-7c78b7db46-kljfh
+kubectl logs smartbids-backend-7c78b7db46-kljfh > error.log
+
+to access a service locally (get the url first)
+
+minikube service smartbids-backend --url
+minikube service smartbids-client-service --url
+
+minikube addons enable ingress
+
+
+
+ 

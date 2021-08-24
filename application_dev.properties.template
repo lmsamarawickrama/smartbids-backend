@@ -1,0 +1,23 @@
+spring.datasource.url= jdbc:mysql://localhost:3306/smartbidsDB?allowPublicKeyRetrieval=true&useSSL=false&sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
+spring.datasource.driver-class-name= com.mysql.jdbc.Driver
+spring.datasource.username= smartbids
+spring.datasource.password= smartbids
+
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto= update
+spring.jpa.show-sql=true
+spring.sql.init.mode=never
+
+# App Properties
+smartbids.app.jwtSecret= smartbidsKey
+smartbids.app.jwtExpirationMs= 86400000
+
+smartbids.rabbitmq.host= localhost
+smartbids.rabbitmq.password= guest
+smartbids.rabbitmq.port= 15672
+smartbids.rabbitmq.username= guest
+smartbids.rabbitmq.exchange= user.exchange
+smartbids.rabbitmq.queue= user.queue
+smartbids.rabbitmq.routingkey= user.routingkey
+
+
